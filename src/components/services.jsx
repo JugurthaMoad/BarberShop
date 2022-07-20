@@ -26,7 +26,7 @@ const Services = () => {
     @media only screen and (min-width: 700px) {
       padding: 10px min(15vw, 550px);
       grid-template-columns: 1fr 1fr;
-    }
+    } ;
   `;
   const Service = styled.div`
     display: flex;
@@ -51,9 +51,9 @@ const Services = () => {
       <Title>Services</Title>
       <ServicesIcon />
       <S_container>
-        {list.map((l) => {
+        {list.map((l, index) => {
           return (
-            <Service>
+            <Service key={index}>
               <Title>
                 {l.title} --{l.price}--
               </Title>

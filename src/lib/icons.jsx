@@ -124,3 +124,32 @@ export const Moustache = () => {
     </svg>
   );
 };
+
+export const Wash = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      role="img"
+      width="min(10vw, 6rem)"
+      height="min(10vw, 6rem)"
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 48 48"
+    >
+      <mask id="svgIDa">
+        <g fill="none" stroke="#fff" stroke-width="4">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M24 4v7m5 6v-6H19v6M31 4H19.8C17.142 4 15 5.2 15 8m23 18.977V26a9 9 0 0 0-9-9H19a9 9 0 0 0-9 9v9a9 9 0 0 0 9 9h5"
+          />
+          <path
+            fill="#555"
+            d="M40 39.77c0 2.336-2.015 4.23-4.5 4.23S31 42.106 31 39.77c0-2.337 2.94-6.77 4.5-6.77s4.5 4.433 4.5 6.77Z"
+          />
+        </g>
+      </mask>
+      <path fill="rgb(33, 50, 32)" d="M0 0h48v48H0z" mask="url(#svgIDa)" />
+    </svg>
+  );
+};
