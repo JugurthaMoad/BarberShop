@@ -95,3 +95,28 @@ const products = [
 export const getImportantProducts = () => {
   return products.slice(1, 5);
 };
+
+const comments = [
+  {
+    id: 0,
+    content:
+      "Premier produit utilisé de la marque et vraiment très bonne impression. Utilisation quotidienne du produit qui me donne la peau douce et propre. Aucune rougeur malgré une peau très sensible, je recommande vraiment.",
+    name: "Devid Smith",
+  },
+  {
+    id: 1,
+    content:
+      "Très facile à utiliser, le parfum, la couleur et les résultats sont top ! Je l'ai utilisé depuis deux mois, une fois par semaine, et j'ai l'impression d'avoir la peau plus douce et avec beaucoup moins d'imperfections.",
+    name: "Lui Harison",
+  },
+  {
+    id: 2,
+    content:
+      "Un super déodorant qui tien effectivement 12h, avec une belle odeur ! pour éviter les traces sur les vêtements, je vous le recommande !",
+    name: "Rafayel Kim",
+  },
+];
+
+export const getComments = () => {
+  return comments;
+};

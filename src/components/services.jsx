@@ -47,7 +47,7 @@ const Services = () => {
     setList(getServices());
   }, [list]);
   return (
-    <Container>
+    <Container id="services">
       <Title>Services</Title>
       <ServicesIcon />
       <S_container>

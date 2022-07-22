@@ -28,10 +28,12 @@ const Shoping = () => {
     gap: 0.4em;
     grid-template-columns: 1fr;
     @media only screen and (min-width: 400px) {
-      padding: 10px min(15vw, 550px);
+      padding: 10px;
       grid-template-columns: 1fr 1fr;
       gap: 0.4em;
       justify-items: center;
+      align-items: center;
+      border: 1px solid red;
     }
     @media only screen and (min-width: 800px) {
       padding: 10px min(15vw, 550px);
@@ -67,7 +69,7 @@ const Shoping = () => {
     setProducts(getImportantProducts());
   }, []);
   return (
-    <Container>
+    <Container id="shop">
       <Title>Shop</Title>
       <Wash />
       <Bar />

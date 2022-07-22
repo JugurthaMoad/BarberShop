@@ -1,6 +1,18 @@
 import styled from "styled-components";
-import { Moustache } from "../lib/icons";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Moustache, CommentIcon } from "../lib/icons";
+import { getComments } from "../lib/services";
 const Comments = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/appointment");
+  };
+  const [comments, setComments] = useState([{}]);
+  const [idComment, setId] = useState(0); // id of the comment
+  const setChoice = (id) => {
+    setId(id);
+  };
   const Container = styled.div`
     width: 100%;
     padding: 10px;
@@ -27,6 +39,8 @@ const Comments = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    padding: 10px;
     margin: auto;
     height: 400px;
     border-radius: 15px;
@@ -72,6 +86,29 @@ const Comments = () => {
       opacity: 0.8;
     }
   `;
+  const Content = styled.div`
+    text-align: center;
+    font-size: min(6vw, 1.2rem);
+  `;
+  const Name = styled.span`
+    font-size: min(5vw, 1.1rem);
+  `;
+  const Choice_container = styled.div`
+    display: flex;
+    gap: 10px;
+  `;
+  const Choice = styled.div`
+    width: 15px;
+    height: 15px;
+    background-color: ${({ num }) => (num === idComment ? "red" : "white")};
+    border-radius: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+  `;
+  useEffect(() => {
+    setComments(getComments());
+  }, [comments]);
   return (
     <Container>
       <Appointment>
@@ -83,9 +120,18 @@ const Comments = () => {
           Justo eget dolor dictum scelerisque. Ut porta tristique viverra quam
           quis i
         </Text>
-        <StyledButton>Book an appointment</StyledButton>
+        <StyledButton onClick={handleClick}>Book an appointment</StyledButton>
       </Appointment>
-      <Comment>JE suis la section commentaire</Comment>
+      <Comment>
+        <CommentIcon />
+        <Content>{comments[idComment].content}</Content>
+        <Name>-- {comments[idComment].name} --</Name>
+        <Choice_container>
+          <Choice onClick={() => setChoice(0)} num={0}></Choice>
+          <Choice onClick={() => setChoice(1)} num={1}></Choice>
+          <Choice onClick={() => setChoice(2)} num={2}></Choice>
+        </Choice_container>
+      </Comment>
     </Container>
   );
 };

@@ -74,7 +74,7 @@ const About = () => {
     }
   `;
   return (
-    <Container>
+    <Container id="about">
       <Grid_container>
         <Sub_container>
           <Title>ABOUT US :</Title>

@@ -47,7 +47,7 @@ const Nav = () => {
       opacity: 0.5;
     }
   `;
-  const StyledLink = styled(Link)`
+  const StyledLink = styled.a`
     text-decoration: none;
     color: inherit;
     font-size: inherit;
@@ -107,14 +107,20 @@ const Nav = () => {
 
         <L_sub_nav>
           <li>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink href="#home">Home</StyledLink>
           </li>
-          <li>About</li>
-          <li>Services</li>
           <li>
-            <StyledLink to="/shop">Shop</StyledLink>
+            <StyledLink href="#about">About</StyledLink>
           </li>
-          <li>Contact</li>
+          <li>
+            <StyledLink href="#services">Services</StyledLink>
+          </li>
+          <li>
+            <StyledLink href="#shop">Shop</StyledLink>
+          </li>
+          <li>
+            <StyledLink href="#contact">Contact</StyledLink>
+          </li>
         </L_sub_nav>
       </L_nav>
       <S_nav>
@@ -128,14 +134,20 @@ const Nav = () => {
             <Close click={handleShow} />
           </Close_container>
           <li onClick={handleShow}>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink href="#home">Home</StyledLink>
           </li>
-          <li onClick={handleShow}>About</li>
-          <li onClick={handleShow}>Services</li>
           <li onClick={handleShow}>
-            <StyledLink to="/shop">Shop</StyledLink>
+            <StyledLink href="#about">About</StyledLink>
           </li>
-          <li onClick={handleShow}>Contact</li>
+          <li onClick={handleShow}>
+            <StyledLink href="#services">Services</StyledLink>
+          </li>
+          <li onClick={handleShow}>
+            <StyledLink href="#shop">Shop</StyledLink>
+          </li>
+          <li onClick={handleShow}>
+            <StyledLink href="#home">Contact</StyledLink>
+          </li>
         </S_sub_nav>
         <Background onClick={handleOutClick} display={show} />
       </S_nav>

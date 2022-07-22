@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 const Herro = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/appointment");
+  };
   const Container = styled.div`
     width: 100%;
     height: calc(100vh - 70px);
@@ -57,7 +62,7 @@ const Herro = () => {
         <Sub_container>
           <Title>Barber</Title>
           <Sub_title>Fresh since 2010</Sub_title>
-          <StyledButton>Book an appointment</StyledButton>
+          <StyledButton onClick={handleClick}>Book an appointment</StyledButton>
         </Sub_container>
       </StyledHerro>
     </Container>
