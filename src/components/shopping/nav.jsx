@@ -1,15 +1,8 @@
 import React, { useState, useRef } from "react";
+import { Link, useMatch } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { MenuIcon, Logo, Close } from "../lib/icons";
+import { MenuIcon, Logo, Close, CartIcon } from "../../lib/icons";
 const Nav = () => {
-  const styledNav = () => css`
-    width: 100%;
-    height: 70px;
-    padding: 0px 15px 0px 0px;
-    justify-content: space-between;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
-    align-items: center;
-  `;
   const ref = useRef(null);
   const [show, setShow] = useState(false); // hide by default
   const handleShow = () => {
@@ -21,6 +14,14 @@ const Nav = () => {
       setShow(false);
     }
   };
+  const styledNav = () => css`
+    width: 100%;
+    height: 70px;
+    padding: 0px 15px 0px 0px;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+    align-items: center;
+  `;
   const L_nav = styled.nav`
     display: none;
 
@@ -39,14 +40,19 @@ const Nav = () => {
   const L_sub_nav = styled.ul`
     display: flex;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
     list-style: none;
-    font-size: 0.7em !important;
+    font-size: 0.7em;
+    li {
+      opacity: ${({ current }) => (current ? "0.2" : "1")};
+    }
     li:hover {
       cursor: pointer;
       opacity: 0.5;
     }
   `;
-  const StyledLink = styled.a`
+  const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
     font-size: inherit;
@@ -95,30 +101,29 @@ const Nav = () => {
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 0;
   `;
-  console.log("show = ", show);
+  const Group = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+  console.log("current = ", useMatch("/shop"));
+  console.log("current = ", useMatch("/shop/cart"));
   return (
     <div>
       <L_nav>
         <Logo_container>
           <Logo />
-          Barber Shop
+          Online Shop
         </Logo_container>
 
         <L_sub_nav>
-          <li>
-            <StyledLink href="#home">Home</StyledLink>
+          <li current={useMatch("/shop")}>
+            <StyledLink to="/shop">Products</StyledLink>
           </li>
-          <li>
-            <StyledLink href="#about">About</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="#services">Services</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="#shop">Shop</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="#contact">Contact</StyledLink>
+          <li current={useMatch("/shop/cart")}>
+            <StyledLink to="/shop/cart">
+              <CartIcon className="iconSize" />
+            </StyledLink>
           </li>
         </L_sub_nav>
       </L_nav>
@@ -127,25 +132,20 @@ const Nav = () => {
           <Logo />
           Barber Shop
         </Logo_container>
-        <MenuIcon click={handleShow} />
+        <Group>
+          <CartIcon />
+          <MenuIcon click={handleShow} />
+        </Group>
+
         <S_sub_nav ref={ref} display={show}>
           <Close_container>
             <Close click={handleShow} />
           </Close_container>
           <li onClick={handleShow}>
-            <StyledLink href="#home">Home</StyledLink>
+            <StyledLink to="/shop">Products</StyledLink>
           </li>
           <li onClick={handleShow}>
-            <StyledLink href="#about">About</StyledLink>
-          </li>
-          <li onClick={handleShow}>
-            <StyledLink href="#services">Services</StyledLink>
-          </li>
-          <li onClick={handleShow}>
-            <StyledLink href="#shop">Shop</StyledLink>
-          </li>
-          <li onClick={handleShow}>
-            <StyledLink href="#home">Contact</StyledLink>
+            <StyledLink to="/shop/cart">Cart</StyledLink>
           </li>
         </S_sub_nav>
         <Background onClick={handleOutClick} display={show} />

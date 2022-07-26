@@ -33,7 +33,6 @@ const Shoping = () => {
       gap: 0.4em;
       justify-items: center;
       align-items: center;
-      border: 1px solid red;
     }
     @media only screen and (min-width: 800px) {
       padding: 10px min(15vw, 550px);

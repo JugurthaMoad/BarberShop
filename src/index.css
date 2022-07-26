@@ -19,3 +19,7 @@ code {
   transition: opacity 0.4s;
   scroll-behavior: smooth;
 }
+.iconSize {
+  width: 1.4em;
+  height: 1.4em;
+}
