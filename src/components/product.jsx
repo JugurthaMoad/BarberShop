@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Product = ({ product }) => {
+const Product = ({ product, ...props }) => {
   const Container = styled.div`
     border: 2px solid rgb(33, 50, 32);
     border-radius: 10px;
@@ -9,6 +9,10 @@ const Product = ({ product }) => {
     height: 320px;
     display: flex;
     flex-direction: column;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid rgba(33, 50, 32, 0.3);
+    }
   `;
   const Title = styled.h2`
     font-size: min(5vw, 1rem);
@@ -22,7 +26,7 @@ const Product = ({ product }) => {
   `;
 
   return (
-    <Container>
+    <Container {...props}>
       <Photo src={product.image} alt="horace" />
       <Title>
         {product.name}

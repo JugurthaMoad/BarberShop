@@ -1,4 +1,11 @@
+import Herro from "./herro";
+import Articles from "./articles";
 const Home = () => {
-  return <div>je suis home of cart</div>;
+  return (
+    <div>
+      <Herro />
+      <Articles />
+    </div>
+  );
 };
 export default Home;
