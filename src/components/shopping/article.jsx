@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import CartContext from "../../context/CartContext";
 import { getProductById } from "../../lib/services";
 const Article = ({ idArticle, element, click, ...props }) => {
   const [product, setProduct] = useState(); // empty product
+  const cart = useContext(CartContext);
+  const handleClick = () => {
+    cart.addElement(product);
+    click();
+  };
   const Container = styled.div`
     position: fixed;
     top: 0px;
@@ -23,8 +29,8 @@ const Article = ({ idArticle, element, click, ...props }) => {
     color: black;
     @media only screen and (min-width: 700px) {
       position: relative;
-      width: 70%;
-      height: 70%;
+      width: 70vw;
+      height: 70vh !important;
       padding: min(3vw, 10px);
     } ;
   `;
@@ -133,7 +139,7 @@ const Article = ({ idArticle, element, click, ...props }) => {
                 cela forcera l'encapsulation du contenu de ce dernier autour de
                 dégradée
               </div>
-              <StyledButton>Acheter</StyledButton>
+              <StyledButton onClick={handleClick}>Acheter</StyledButton>
             </DetailContainer>
           </Content>
         </S_container>

@@ -1,9 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Link, useMatch } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { MenuIcon, Logo, Close, CartIcon } from "../../lib/icons";
+import CartContext from "../../context/CartContext";
 const Nav = () => {
   const ref = useRef(null);
+  const cart = useContext(CartContext);
   const [show, setShow] = useState(false); // hide by default
   const handleShow = () => {
     setShow(!show);
@@ -54,6 +56,8 @@ const Nav = () => {
   `;
   const StyledLink = styled(Link)`
     text-decoration: none;
+    display: flex;
+    justify-content: center;
     color: inherit;
     font-size: inherit;
   `;
@@ -106,8 +110,18 @@ const Nav = () => {
     justify-content: center;
     align-items: center;
   `;
-  console.log("current = ", useMatch("/shop"));
-  console.log("current = ", useMatch("/shop/cart"));
+  const Element = styled.span`
+    display: ${({ element }) => (element > 0 ? "flex" : "none")};
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px !important;
+    border-radius: 100px;
+  `;
   return (
     <div>
       <L_nav>
@@ -123,6 +137,9 @@ const Nav = () => {
           <li current={useMatch("/shop/cart")}>
             <StyledLink to="/shop/cart">
               <CartIcon className="iconSize" />
+              <Element element={cart.articlesInCart}>
+                {cart.articlesInCart}
+              </Element>
             </StyledLink>
           </li>
         </L_sub_nav>
@@ -133,7 +150,12 @@ const Nav = () => {
           Barber Shop
         </Logo_container>
         <Group>
-          <CartIcon />
+          <StyledLink to="/shop/cart">
+            <CartIcon className="iconSize" />
+            <Element element={cart.articlesInCart}>
+              {cart.articlesInCart}
+            </Element>
+          </StyledLink>
           <MenuIcon click={handleShow} />
         </Group>
 
