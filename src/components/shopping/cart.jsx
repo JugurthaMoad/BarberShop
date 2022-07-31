@@ -17,7 +17,7 @@ const Cart = () => {
   const renderContent = () => {
     if (listArticles.length > 0) {
       return listArticles.map((item, index) => {
-        return <Element key={index}>{listArticles[0].rep}</Element>;
+        return <Element key={index}>{item.rep}</Element>;
       });
     } else {
       return <div>No elements</div>;

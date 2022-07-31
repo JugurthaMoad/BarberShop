@@ -149,7 +149,7 @@ const Article = ({ idArticle, element, click, ...props }) => {
   useEffect(() => {
     setProduct(getProductById(idArticle));
     element.current.style.overflow = "hidden";
-  }, [idArticle]);
+  });
   return <Container>{renderElement()}</Container>;
 };
 
