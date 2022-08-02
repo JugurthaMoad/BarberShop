@@ -21,12 +21,19 @@ const Shop = () => {
     setList(items);
     setCartArticles(CartArticles + 1);
   };
-  const deleteElement = (it) => {
-    let item = listArticles;
-    let index = item.indexOf(it);
-    item.splice(index, 1);
-    setCartArticles(CartArticles - 1);
-    setList(item);
+  const deleteElement = (el) => {
+    let items = [...listArticles];
+
+    let isInCart = items.find((item) => item.element.id === el.id);
+    if (isInCart !== undefined) {
+      if (isInCart.rep > 1) {
+        isInCart.rep -= 1;
+      } else {
+        items = items.filter((item) => item.element.id !== el.id);
+      }
+      setList(items);
+      setCartArticles(CartArticles - 1);
+    }
   };
 
   return (

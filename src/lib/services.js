@@ -63,35 +63,35 @@ const products = [
   {
     id: 0,
     name: "  Nettoyant Visage Purifiant ",
-    price: "13€",
+    price: 13,
     image:
       "https://horace.co/cdn-cgi/image/fit=contain,width=391,format=auto,dpr=1/media/catalog/product//h/o/horace_visage_nettoyrant-purifiant_car1.jpg",
   },
   {
     id: 1,
     name: " Cire Coiffante ",
-    price: "13€",
+    price: 13,
     image:
       "https://horace.co/cdn-cgi/image/fit=contain,width=391,format=auto,dpr=1/media/catalog/product//h/o/horace-cire_coiffante-car1-nm.jpg",
   },
   {
     id: 2,
     name: " Shampoing Purifiant Doux ",
-    price: "13€",
+    price: 13,
     image:
       "https://horace.co/cdn-cgi/image/fit=contain,width=391,format=auto,dpr=1/media/catalog/product//h/o/horace-shampoing_doux_purifiant-car1.jpg",
   },
   {
     id: 3,
     name: " Après-Shampoing Fortifiant ",
-    price: "15€",
+    price: 15,
     image:
       "https://horace.co/cdn-cgi/image/fit=contain,width=391,format=auto,dpr=1/media/catalog/product//h/o/horace-apres_shampoing_fortifiant-car1_2.jpg",
   },
   {
     id: 4,
     name: " Shampoing Hydratant Doux ",
-    price: "14€",
+    price: 14,
     image:
       "https://horace.co/cdn-cgi/image/fit=contain,width=391,format=auto,dpr=1/media/catalog/product//h/o/horace-shampoing-nourrissant-car1.jpg",
   },
