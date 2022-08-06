@@ -125,7 +125,7 @@ const Article = ({ idArticle, element, click, ...props }) => {
             <PhotoContainer src={product.image} alt="horace" />
             <DetailContainer>
               <S_title>
-                {product.name} {product.price}
+                {product.name} {product.price}€
               </S_title>
               <div>
                 d'un point de vue technique. Ceci est nécessaire techniquement

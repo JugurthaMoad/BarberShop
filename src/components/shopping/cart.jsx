@@ -104,7 +104,7 @@ const Cart = () => {
             <Photo src={item.element.image} />
             <Info>
               <Title>
-                {item.element.name} {item.element.price}
+                {item.element.name} {item.element.price}€
               </Title>
               <N_Article>
                 <Add onClick={() => handleAdd(item.element)}>+</Add>

@@ -30,7 +30,7 @@ const Product = ({ product, ...props }) => {
       <Photo src={product.image} alt="horace" />
       <Title>
         {product.name}
-        -- {product.price}
+        -- {product.price}€
       </Title>
     </Container>
   );

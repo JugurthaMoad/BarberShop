@@ -131,6 +131,9 @@ const Nav = () => {
         </Logo_container>
 
         <L_sub_nav>
+          <li current={useMatch("/")}>
+            <StyledLink to="/">Home</StyledLink>
+          </li>
           <li current={useMatch("/shop")}>
             <StyledLink to="/shop">Products</StyledLink>
           </li>
@@ -163,6 +166,9 @@ const Nav = () => {
           <Close_container>
             <Close click={handleShow} />
           </Close_container>
+          <li onClick={handleShow}>
+            <StyledLink to="/">Home</StyledLink>
+          </li>
           <li onClick={handleShow}>
             <StyledLink to="/shop">Products</StyledLink>
           </li>
