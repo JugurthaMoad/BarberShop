@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/BarberShop/static/css/main.2e3fb03a.css",
-    "main.js": "/BarberShop/static/js/main.635d4127.js",
+    "main.js": "/BarberShop/static/js/main.39ca3f74.js",
     "static/js/787.053705ea.chunk.js": "/BarberShop/static/js/787.053705ea.chunk.js",
     "index.html": "/BarberShop/index.html",
     "main.2e3fb03a.css.map": "/BarberShop/static/css/main.2e3fb03a.css.map",
-    "main.635d4127.js.map": "/BarberShop/static/js/main.635d4127.js.map",
+    "main.39ca3f74.js.map": "/BarberShop/static/js/main.39ca3f74.js.map",
     "787.053705ea.chunk.js.map": "/BarberShop/static/js/787.053705ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e3fb03a.css",
-    "static/js/main.635d4127.js"
+    "static/js/main.39ca3f74.js"
   ]
 }
