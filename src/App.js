@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route exact path="/BarberShop" element={<Landing />} />
         <Route path="/about_details" element={<AboutDetails />} />
         <Route path="/shop" element={<Shop />}>
           <Route index element={<Home />} />
