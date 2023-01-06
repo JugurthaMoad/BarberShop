@@ -132,7 +132,7 @@ const Nav = () => {
 
         <L_sub_nav>
           <li current={useMatch("/")}>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/BarberShop/">Home</StyledLink>
           </li>
           <li current={useMatch("/shop")}>
             <StyledLink to="/shop">Products</StyledLink>
