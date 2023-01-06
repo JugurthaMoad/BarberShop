@@ -167,7 +167,7 @@ const Nav = () => {
             <Close click={handleShow} />
           </Close_container>
           <li onClick={handleShow}>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/BarberShop/">Home</StyledLink>
           </li>
           <li onClick={handleShow}>
             <StyledLink to="/shop">Products</StyledLink>
